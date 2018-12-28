@@ -21,8 +21,12 @@ restService.post("/test",function(req,res){
       break;
    }
    return res.json({
-   	fulfillmentMessages:[speech],
    	fulfillmentText: speech,
+   	    fulfillmentMessages:[
+	    {
+	      "test":speech
+	    }
+           ],
    	source:"test-node"
    });
 });
