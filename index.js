@@ -8,7 +8,7 @@ const restService = express();
 restService.use(
     bodyParser.urlencoded({
     	extended:true
-    });
+    })
 	);
 
 restService.use(bodyParser.json());
@@ -21,13 +21,13 @@ restService.post("/test",function(req,res){
       break;
    }
    return res.json({
-   	speech:speech,
-   	displayText:speech,
-   	source:"test-Echo"
+   	speech: speech,
+   	displayText: peech,
+   	source:"webhook-echo-sample"
    });
 });
 
 
-restService.listen(process.env.PORT || 6000,function(){
+restService.listen(process.env.PORT || 8000,function(){
 	console.log("Server up and listening");
 });
