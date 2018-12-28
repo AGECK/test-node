@@ -22,7 +22,7 @@ restService.post("/test",function(req,res){
    }
    return res.json({
    	speech: speech,
-   	displayText: peech,
+   	displayText: speech,
    	source:"webhook-echo-sample"
    });
 });
