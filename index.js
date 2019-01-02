@@ -20,10 +20,10 @@ restService.post("/test",function(req,res){
       speech = "Ho! You can do it!"
       break;
       case "music two":
-      speech = "Under development, please look forward to it"
+      speech = "Under development, please look forward to it!"
       break;
-      case :
-      speech = "Under development, please look forward to it"
+      case "music three":
+      speech = "You're still trying. Come on!"
       break;
    }
    return res.json({
