@@ -19,6 +19,12 @@ restService.post("/test",function(req,res){
       case "music one":
       speech = "Ho! You can do it!"
       break;
+      case "music two":
+      speech = "Under development, please look forward to it"
+      break;
+      case :
+      speech = "Under development, please look forward to it"
+      break;
    }
    return res.json({
    	speech: speech,
