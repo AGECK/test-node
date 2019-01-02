@@ -28,13 +28,6 @@ restService.post("/test",function(req,res){
       case "test music":
       speech = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg">did not get your audio file</audio></speak>';
       break;
-      case "Repeat what I said":
-      speech = req.body.result &&
-    req.body.result.parameters &&
-    req.body.result.parameters.Testshur
-      ? req.body.result.parameters.Testshur
-      : "Seems like some problem. Speak again.";
-      break;
    }
    return res.json({
    	speech: speech,
