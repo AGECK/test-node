@@ -5,11 +5,13 @@ const bodyParser = require("body-parser");
 
 const restService = express();
 
+restService.use(express.static('public'));
+
 restService.use(
     bodyParser.urlencoded({
-    	extended:true
+      extended:true
     })
-	);
+  );
 
 restService.use(bodyParser.json());
 
@@ -28,15 +30,18 @@ restService.post("/test",function(req,res){
       case "test music":
       speech = '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg">did not get your audio file</audio></speak>';
       break;
+      case "test music2":
+      speech = '<speak><audio src="./public/slide_whistle.ogg">did not get your audio file</audio></speak>';
+      break;
    }
    return res.json({
-   	speech: speech,
+    speech: speech,
         displayText: speech,
-   	source:"test-node"
+    source:"test-node"
    });
 });
 
 
 restService.listen(process.env.PORT || 8000,function(){
-	console.log("Server up and listening");
+  console.log("Server up and listening");
 });
