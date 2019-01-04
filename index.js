@@ -5,43 +5,79 @@ const bodyParser = require("body-parser");
 
 const restService = express();
 
-restService.use(express.static('public'));
-
 restService.use(
-    bodyParser.urlencoded({
-      extended:true
-    })
-  );
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
 
 restService.use(bodyParser.json());
 
-restService.post("/test",function(req,res){
-   var speech = ""
-   switch(req.body.result.parameters.Testshur.toLowerCase()){
-      case "music one":
-      speech = "Ho! You can do it!"
-      break;
-      case "music two":
-      speech = "Under development, please look forward to it!"
-      break;
-      case "music three":
-      speech = "You're still trying. Come on!"
-      break;
-      case "test music":
-      speech = '<speak><audio src="https://raw.githubusercontent.com/AGECK/test-node/master/public/test-music.mp3">did not get your audio file</audio></speak>';
-      break;
-      case "test img":
-      speech = '<img src="https://github.com/AGECK/test-node/blob/master/public/test-img.png">';
-      break;
-   }
-   return res.json({
-    speech: speech,
-        displayText: speech,
-    source:"test-node"
-   });
+restService.post("/slack-test", function(req, res) {
+  var slack_message = {
+    text: "Details of JIRA board for Browse and Commerce",
+    attachments: [
+      {
+        title: "JIRA Board",
+        title_link: "http://www.google.com",
+        color: "#36a64f",
+
+        fields: [
+          {
+            title: "Epic Count",
+            value: "50",
+            short: "false"
+          },
+          {
+            title: "Story Count",
+            value: "40",
+            short: "false"
+          }
+        ],
+
+        thumb_url:
+          "https://stiltsoft.com/blog/wp-content/uploads/2016/01/5.jira_.png"
+      },
+      {
+        title: "Story status count",
+        title_link: "http://www.google.com",
+        color: "#f49e42",
+
+        fields: [
+          {
+            title: "Not started",
+            value: "50",
+            short: "false"
+          },
+          {
+            title: "Development",
+            value: "40",
+            short: "false"
+          },
+          {
+            title: "Development",
+            value: "40",
+            short: "false"
+          },
+          {
+            title: "Development",
+            value: "40",
+            short: "false"
+          }
+        ]
+      }
+    ]
+  };
+  return res.json({
+    speech: slack_message,
+    displayText: slack_message,
+    source: "webhook-echo-sample",
+    data: {
+      slack: slack_message
+    }
+  });
 });
 
-
-restService.listen(process.env.PORT || 8000,function(){
-  console.log("Server up and listening");
+restService.listen(process.env.PORT || 8000, function() {
+ console.log("Server up and listening");
 });
