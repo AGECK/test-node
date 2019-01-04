@@ -30,6 +30,9 @@ restService.post("/test",function(req,res){
       case "test music":
       speech = '<speak><audio src="https://raw.githubusercontent.com/AGECK/test-node/master/public/test-music.mp3">did not get your audio file</audio></speak>';
       break;
+      case "test img":
+      speech = '<img src="https://github.com/AGECK/test-node/blob/master/public/test-img.png">';
+      break;
    }
    return res.json({
     speech: speech,
