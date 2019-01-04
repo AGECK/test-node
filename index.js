@@ -14,7 +14,10 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/slack-test", function(req, res) {
-  var slack_message = {
+  var slack_message = "";
+  switch (req.body.result.parameters.AudioSample.toLowerCase()) {
+  case "OK,this is test":
+     slack_message = {
     text: "Details of JIRA board for Browse and Commerce",
     attachments: [
       {
@@ -68,6 +71,8 @@ restService.post("/slack-test", function(req, res) {
       }
     ]
   };
+  break;
+}
   return res.json({
     speech: slack_message,
     displayText: slack_message,
