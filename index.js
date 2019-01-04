@@ -28,7 +28,7 @@ restService.post("/test",function(req,res){
       speech = "You're still trying. Come on!"
       break;
       case "test music":
-      speech = '<speak><audio src="https://github.com/AGECK/test-node/blob/master/public/slide_whistle.ogg">did not get your audio file</audio></speak>';
+      speech = '<speak><audio speed="200%" src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg">did not get your audio file</audio></speak>';
       break;
    }
    return res.json({
