@@ -120,6 +120,18 @@ restService.post("/audio", function(req, res) {
   });
 });
 
+restService.post("/test-img", function(req, res) {
+  return res.json({
+speech: "this text is spoken out loud if the platform supports voice interactions",
+displayText: "this text is displayed visually",
+messages: {
+  type: 1,
+  title: "card title",
+  subtitle: "card text",
+  imageUrl: "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png"
+  });
+});
+
 restService.post("/video", function(req, res) {
   return res.json({
     speech:
