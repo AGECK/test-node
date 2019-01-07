@@ -14,72 +14,52 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/slack-test", function(req, res) {
-  var slack_message = "";
-  switch (req.body.result.parameters.AudioSample.toLowerCase()) {
-  case "OK,this is test":
-     slack_message = {
-    text: "Details of JIRA board for Browse and Commerce",
-    attachments: [
-      {
-        title: "JIRA Board",
-        title_link: "http://www.google.com",
-        color: "#36a64f",
-
-        fields: [
-          {
-            title: "Epic Count",
-            value: "50",
-            short: "false"
-          },
-          {
-            title: "Story Count",
-            value: "40",
-            short: "false"
-          }
-        ],
-
-        thumb_url:
-          "https://stiltsoft.com/blog/wp-content/uploads/2016/01/5.jira_.png"
-      },
-      {
-        title: "Story status count",
-        title_link: "http://www.google.com",
-        color: "#f49e42",
-
-        fields: [
-          {
-            title: "Not started",
-            value: "50",
-            short: "false"
-          },
-          {
-            title: "Development",
-            value: "40",
-            short: "false"
-          },
-          {
-            title: "Development",
-            value: "40",
-            short: "false"
-          },
-          {
-            title: "Development",
-            value: "40",
-            short: "false"
-          }
-        ]
-      }
-    ]
-  };
-  break;
-}
   return res.json({
-    speech: slack_message,
-    displayText: slack_message,
-    source: "webhook-echo-sample",
-    data: {
-      slack: slack_message
+"speech": "this text is spoken out loud if the platform supports voice interactions",
+"displayText": "this text is displayed visually",
+"messages": {
+  "type": 1,
+  "title": "card title",
+  "subtitle": "card text",
+  "imageUrl": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png"
+},
+"data": {
+  "google": {
+    "expectUserResponse": true,
+    "richResponse": {
+      "items": [
+        {
+          "simpleResponse": {
+            "textToSpeech": "this is a simple response"
+          }
+        }
+      ]
     }
+  },
+  "facebook": {
+    "text": "Hello, Facebook!"
+  },
+  "slack": {
+    "text": "This is a text response for Slack."
+  }
+},
+"contextOut": [
+  {
+    "name": "context name",
+    "lifespan": 5,
+    "parameters": {
+      "param": "param value"
+    }
+  }
+],
+"source": "example.com",
+"followupEvent": {
+  "name": "event name",
+  "parameters": {
+    "param": "param value"
+  }
+}
+
   });
 });
 
