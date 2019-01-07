@@ -24,7 +24,8 @@ restService.post("/video", function(req, res) {
 });
 
 restService.post("/slack-test", function(req, res) {
-  var slack_message = {
+    var slack_message = ""
+    slack_message = {
     text: "Details of JIRA board for Browse and Commerce",
     attachments: [
       {
