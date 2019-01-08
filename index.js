@@ -1,7 +1,7 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-var mysql = require("mysql");
+const mysql = require("mysql");
 const restService = express();
 var connection = mysql.createConnection({
 	host:'localhost',
@@ -30,8 +30,8 @@ restService.post("/test-sql",function(req,res){
     });
 
     return res.json({
-    	speech:testnumber,
-    	displayText:testnumber,
+    	speech: testnumber,
+    	displayText: testnumber,
     	source:"webhook-echo-sample"
     });
 
