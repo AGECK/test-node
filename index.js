@@ -2,7 +2,7 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const mysql = require("mysql");
+var mysql = require("mysql");
 const restService = express();
 var connection = mysql.createConnection({
 	host:'localhost',
