@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const mysql = require("mysql");
 const restService = express();
 var connection = mysql.createConnection({
-	host:localhost,
+	host:'localhost',
 	user:'root',
 	password:'wokao13226036560',
 	database:'zhuce'
@@ -20,7 +20,7 @@ restService.use(bodyParser.json());
 
 connection.connect();
 
-restService.post("test-sql",function(req,res){
+restService.post("/test-sql",function(req,res){
     var addName = req.body.selectSql;
     var testnumber = "";
     connection.query('select 1 + 1 as solution',function(error,results,fields){
