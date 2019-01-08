@@ -30,7 +30,7 @@ restService.post("/test-sql",function(req,res){
        testnumber = results;  
     });
 
-    return results.json({
+    return res.json({
     	speech:testnumber,
     	displayText:testnumber,
     	source:"webhook-echo-sample"
