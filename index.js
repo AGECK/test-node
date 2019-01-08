@@ -21,7 +21,6 @@ restService.use(bodyParser.json());
 connection.connect();
 
 restService.post("/test-sql",function(req,res){
-    var addName = req.body.selectSql;
     var testnumber = "";
     connection.query('select 1 + 1 as solution',function(error,results,fields){
        testnumber = results;  
