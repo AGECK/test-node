@@ -31,6 +31,10 @@ restService.post("/audio", function(req, res) {
   var speech = "";
   switch (req.body.result.parameters.AudioSample.toLowerCase()) {
     //Speech Synthesis Markup Language 
+     case "test music":
+      speech =
+        '<speak><audio src="https://raw.githubusercontent.com/AGECK/test-node/master/public/Cancan.mp3">did not get your audio file</audio></speak>';
+      break;
     case "music one":
       speech =
         '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg">did not get your audio file</audio></speak>';
