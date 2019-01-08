@@ -22,7 +22,11 @@ connection.connect();
 
 restService.post("/test-sql",function(req,res){
     var testnumber = "";
-    connection.query('select 1 + 1 as solution',function(error,results,fields){
+    connection.query('select 1 + 1 as solution',function(error,result){
+	  if(error){
+          console.log('[SELECT ERROR] - ',error.message);
+          return;
+        }
        testnumber = results;  
     });
 
@@ -34,12 +38,7 @@ restService.post("/test-sql",function(req,res){
 
 });
 
-
-
-
-
-var server = restService.listen(8000,'localhost',function(){
-	var host = server.address().address
-	var port = server.address().port
-	console.log("访问地址为 http://%s:%s",host,port);
+restService.listen(process.env.PORT || 8000, function() {
+ console.log("Server up and listening");
 });
+
