@@ -44,10 +44,10 @@ restService.post("/V2test", function(req, res) {
           },
           {
             basicCard: {
-              title: "Card Title",
+              title: "Baidu搜索",
               image: {
                 url: "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_86d58ae1.png",
-                accessibilityText: "Google Logo"
+                accessibilityText: "Baidu Logo"
               },
               buttons: [
                 {
