@@ -57,7 +57,7 @@ restService.post("/V2test", function(req, res) {
                   }
                 }
               ],
-              imageDisplayOptions: "DEFAULT"
+              imageDisplayOptions: "CROPPED"
             }
           }
         ]
