@@ -14,8 +14,6 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/V2test", function(req, res) {
-  switch (req.body.result.parameters.AudioSample.toLowerCase()) {
-    case "Baidu":
   return res.json({
     fulfillmentText: "This is a text response",
     fulfillmentMessages: [
@@ -67,8 +65,6 @@ restService.post("/V2test", function(req, res) {
     }
   }
   });
-      break;
-  }
 });
 restService.listen(process.env.PORT || 8000, function() {
   console.log("Server up and listening");
