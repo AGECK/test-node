@@ -46,7 +46,7 @@ restService.post("/V2test", function(req, res) {
             basicCard: {
               title: "Card Title",
               image: {
-                url: "https://www.baidu.com/img/superlogo_c4d7df0a003d3db9b65e9ef0fe6da1ec.png?where=super",
+                url: "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_86d58ae1.png",
                 accessibilityText: "Google Logo"
               },
               buttons: [
