@@ -46,7 +46,7 @@ restService.post("/V2test", function(req, res) {
             basicCard: {
               title: "Card Title",
               image: {
-                url: "https://raw.githubusercontent.com/AGECK/test-node/master/public/test-img.png",
+                url: "https://www.baidu.com/img/superlogo_c4d7df0a003d3db9b65e9ef0fe6da1ec.png?where=super",
                 accessibilityText: "Google Logo"
               },
               buttons: [
