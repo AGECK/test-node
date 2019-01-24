@@ -48,8 +48,8 @@ restService.post("/V2test", function(req, res) {
               image: {
                 url: "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_86d58ae1.png",
                 accessibilityText: "Baidu Logo",
-                height: "200",
-                width: "100"
+                height: 300,
+                width: 200
               },
               buttons: [
                 {
