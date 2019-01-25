@@ -27,7 +27,7 @@ restService.post("/V2test",function(req,res){
                    }
            	   }
            	  ],
-           	  source: "webhook-echo-sample",
+           	  source: "webhook-echo-sample"
            });
 
 });
