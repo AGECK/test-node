@@ -14,8 +14,7 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/V2test",function(req,res){
-    switch(res.body.result.parameters.AudioSample.toLowerCase())
-    {
+
         case "baidu":
            return res.json({
            	  fulfillmentText: "This is a text response",
@@ -30,8 +29,7 @@ restService.post("/V2test",function(req,res){
            	  ],
            	  source: "webhook-echo-sample",
            });
-        break;
-    }
+
 });
 
 
