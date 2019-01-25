@@ -15,7 +15,6 @@ restService.use(bodyParser.json());
 
 restService.post("/V2test",function(req,res){
 
-        case "baidu":
            return res.json({
            	  fulfillmentText: "This is a text response",
            	  fulfillmentMessages:[
