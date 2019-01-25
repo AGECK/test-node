@@ -14,17 +14,15 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/V2test",function(req,res){
-	var speech = "";
-  switch (req.body.result.parameters.AudioSample.toLowerCase()) {
-  	  case "baidu":
-  	     speech = "baidu";
-  	  break;
-  }
            return res.json({
            	  fulfillmentText: "This is a text response",
            	  fulfillmentMessages:[
            	  {
-                 speech
+                      text : {
+		          text : [
+			      "baidu"
+			  ]
+		      }
            	   }
            	  ],
            	  source: "webhook-echo-sample"
