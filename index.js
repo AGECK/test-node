@@ -42,7 +42,7 @@ restService.post("/V2test",function(req,res){
                         	items : [{
                         		info : {
                                      key : "baidu"
-                        		}
+                        		},
                         		title : "These are some of the options",
                         		description : "These are some of the options",
                         		image : {
