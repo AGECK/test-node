@@ -23,7 +23,7 @@ restService.post("/V2test",function(req,res){
               {
                    text :{
                       text : [
-                         speech
+                         "speech"
                       ]
                    }
                }
