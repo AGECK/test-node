@@ -26,8 +26,6 @@ restService.post("/V2test",function(req,res){
            	   }
            	  ],
            	  source: "webhook-echo-sample",
-           	  platform: "google",
-  			  type: "custom_payload",
 			 payload: {
 			    google: {
 			      expectUserResponse: true,
@@ -43,7 +41,7 @@ restService.post("/V2test",function(req,res){
 			      systemIntent: {
 			        intent: "actions.intent.OPTION",
 			        data: {
-			          @type: "type.googleapis.com/google.actions.v2.OptionValueSpec",
+			          
 			          listSelect: {
 			            title: "Hello",
 			            items: [
@@ -56,7 +54,7 @@ restService.post("/V2test",function(req,res){
 			                  url: "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
 			                  accessibilityText: "first alt"
 			                },
-			                title: first title
+			                title: "first title"
 			              },
 			              {
 			                optionInfo: {
