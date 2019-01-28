@@ -26,6 +26,8 @@ restService.post("/V2test",function(req,res){
            	   }
            	  ],
            	  source: "webhook-echo-sample",
+           	  platform: "google",
+  			  type: "custom_payload",
 			 payload: {
 			    google: {
 			      expectUserResponse: true,
