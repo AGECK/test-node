@@ -41,7 +41,7 @@ restService.post("/V2test",function(req,res){
 			      systemIntent: {
 			        intent: "actions.intent.OPTION",
 			        data: {
-			          
+			          "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
 			          listSelect: {
 			            title: "Hello",
 			            items: [
