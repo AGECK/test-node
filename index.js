@@ -12,18 +12,14 @@ restService.use(
 );
 
 restService.post("/V2test",function(req,res){
-      var speech = req.body.result.parameters.AudioSample.toLowerCase();
-      if(speech == "baidu")
-      {
-           speech = "baidu";
-      };
+          var speech = "baidu";
            return res.json({
               fulfillmentText: "This is a text response",
               fulfillmentMessages:[
               {
                    text :{
                       text : [
-                         "speech"
+                        speech
                       ]
                    }
                }
