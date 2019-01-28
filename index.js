@@ -37,24 +37,7 @@ restService.post("/V2test",function(req,res){
 			            }
 			          },
 			          {
-/*			            basicCard: {
-			              title: "Card Title",
-			              image: {
-			                url: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
-			                accessibilityText: "Google Logo"
-			              },
-			              buttons: [
-			                {
-			                  title: "Button Title",
-			                  openUrlAction: {
-			                    url: "https://www.google.com"
-			                  }
-			                }
-			              ],
-			              imageDisplayOptions: "WHITE"
-			            }*/
-
-                        listSelect : {
+                              listSelect : {
                         	title : "This is test listSelect",
                         	items : [{
                         		info : {
