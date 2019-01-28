@@ -13,20 +13,37 @@ restService.use(
 
 restService.post("/V2test",function(req,res){
           var speech = "baidu";
+       if (speech == "baidu"){
            return res.json({
               fulfillmentText: "This is a text response",
               fulfillmentMessages:[
               {
                    text :{
                       text : [
-                        speech
+                          speech
                       ]
                    }
                }
               ],
               source: "webhook-echo-sample"
            });
-
+      }
+      else
+      {
+         return res.json({
+              fulfillmentText: "This is a text response",
+              fulfillmentMessages:[
+              {
+                   text :{
+                      text : [
+                          "not baidu"
+                      ]
+                   }
+               }
+              ],
+              source: "webhook-echo-sample"
+           });
+      }
 });
 
 
