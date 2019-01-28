@@ -15,20 +15,22 @@ restService.post("/V2test",function(req,res){
       var speech = req.body.result.parameters.AudioSample.toLowerCase();
       if(speech == "baidu")
       {
+           speech = "baidu";
+      };
            return res.json({
               fulfillmentText: "This is a text response",
               fulfillmentMessages:[
               {
                    text :{
                       text : [
-                         "baidu"
+                         speech
                       ]
                    }
                }
               ],
               source: "webhook-echo-sample"
            });
-      }
+
 });
 
 
