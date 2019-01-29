@@ -14,7 +14,7 @@ restService.use(
 restService.post("/V2test",function(req,res){
 	      var testecho = "";
           var speech = "baidu1";
-          testecho = req.body.result.parameters.echoText;
+          testecho = req.query.echoText;
        if (speech == "baidu"){
            return res.json({
               fulfillmentText: "This is a text response",
