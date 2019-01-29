@@ -12,6 +12,7 @@ restService.use(
 );
 
 restService.post("/V2test",function(req,res){
+          var testif = req.body.AudioSample;
           var speech = "baidu1";
           var testecho = req.body.result.parameters.echoText;
        if (speech == "baidu"){
