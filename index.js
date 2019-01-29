@@ -12,10 +12,9 @@ restService.use(
 );
 
 restService.post("/V2test",function(req,res){
-	      var testif = "";
-	      testif = req.body.AudioSample;
+	      var testecho = "";
           var speech = "baidu1";
-          var testecho = req.body.result.parameters.echoText;
+          testecho = req.body.result.parameters.echoText;
        if (speech == "baidu"){
            return res.json({
               fulfillmentText: "This is a text response",
