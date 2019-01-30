@@ -12,7 +12,8 @@ restService.use(
 );
 
 restService.post("/V2test",function(req,res){
-          var speech = req.boay.queryResult.parameters.echoText;
+          var speech = "";
+          speech = req.boay.queryResult.parameters.echoText;
        if (speech == "baidu"){
            return res.json({
               fulfillmentText: "This is a text response",
