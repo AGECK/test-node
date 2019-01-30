@@ -13,7 +13,7 @@ restService.use(
 
 restService.post("/V2test",function(req,res){
           var speech = "";
-          speech = req.query.queryResult.parameters.echoText;
+          speech = req.query.queryResult.queryText;
        if (speech == "baidu"){
            return res.json({
               fulfillmentText: "This is a text response",
