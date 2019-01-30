@@ -13,8 +13,7 @@ restService.use(
 
 restService.post("/V2test",function(req,res){
           var speech = "阿士大夫撒";
-        
-       if (speech == "baidu"){
+          speech = req.body.queryResult.parameters.echoText;
            return res.json({
               fulfillmentText: "This is a text response",
               fulfillmentMessages:[
@@ -28,23 +27,6 @@ restService.post("/V2test",function(req,res){
               ],
               source: "webhook-echo-sample"
            });
-      }
-      else
-      {
-         return res.json({
-              fulfillmentText: "This is a text response",
-              fulfillmentMessages:[
-              {
-                   text :{
-                      text : [
-                          speech
-                      ]
-                   }
-               }
-              ],
-              source: "webhook-echo-sample"
-           });
-      }
 });
 
 
