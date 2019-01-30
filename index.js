@@ -12,7 +12,7 @@ restService.use(
 );
 
 restService.post("/V2test",function(req,res){
-          var speech = "test";
+          var speech = req.boay.echoText;
        if (speech == "baidu"){
            return res.json({
               fulfillmentText: "This is a text response",
