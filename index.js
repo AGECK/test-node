@@ -12,8 +12,8 @@ restService.use(
 );
 
 restService.post("/V2test",function(req,res){
-          var speech = "";
-          speech = req.body.queryResult.queryText;
+          var speech = "阿士大夫撒";
+        
        if (speech == "baidu"){
            return res.json({
               fulfillmentText: "This is a text response",
