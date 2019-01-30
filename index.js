@@ -13,7 +13,6 @@ restService.use(
 
 restService.post("/V2test",function(req,res){
           var speech = "test";
-       speech = req.body.result;
        if (speech == "baidu"){
            return res.json({
               fulfillmentText: "This is a text response",
