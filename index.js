@@ -38,7 +38,7 @@ restService.post("/V2test",function(req,res){
               {
                    text :{
                       text : [
-                          "not baidu"
+                          speech
                       ]
                    }
                }
