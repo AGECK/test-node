@@ -66,7 +66,7 @@ restService.post("/V2test",function(req,res){
 				  }
            });
            break;
-            case "Related products":
+            case "related products":
                         return res.json({
            	  fulfillmentText: "This is a text response",
            	  fulfillmentMessages:[
