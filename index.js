@@ -71,14 +71,17 @@ restService.post("/V2test",function(req,res){
               fulfillmentText: "This is a text response",
               fulfillmentMessages:[
               {
-                   text :{
+                 
+               }
+              ],
+              source: "webhook-echo-sample",
+                                payload: {
+                          text :{
                       text : [
                           "目前只可以百度，可以尝试输入 baidu"
                       ]
                    }
-               }
-              ],
-              source: "webhook-echo-sample"
+				  }
            });
       }
 });
