@@ -66,6 +66,67 @@ restService.post("/V2test",function(req,res){
 				  }
            });
            break;
+            case "Related products":
+              fulfillmentText: "This is a text response",
+              fulfillmentMessages:[
+              {
+                   text :{
+                      text : [
+                          "This is Baidu"
+                      ]
+                   }
+               }
+              ],
+              source: "webhook-echo-sample",
+                                payload: {
+				    google: {
+				      expectUserResponse: true,
+				      richResponse: {
+				        items: [
+				          {
+				            simpleResponse: {
+				              textToSpeech: "This is a Basic Card:"
+				            }
+				          }
+				        ]
+				      },
+				    systemIntent: {
+			        intent: "actions.intent.OPTION",
+			        data: {
+			          "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
+			          listSelect: {
+			            title: "Hello",
+			            items: [
+			              {
+			                optionInfo: {
+			                  key: "first title key"
+			                },
+			                description: "first description",
+			                image: {
+			                  url: "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
+			                  accessibilityText: "first alt"
+			                },
+			                title: "first title"
+			              },
+			              {
+			                optionInfo: {
+			                  key: "second"
+			                },
+			                description: "second description",
+			                image: {
+			                  url: "https://lh3.googleusercontent.com/Nu3a6F80WfixUqf_ec_vgXy_c0-0r4VLJRXjVFF_X_CIilEu8B9fT35qyTEj_PEsKw",
+			                  accessibilityText: "second alt"
+			                },
+			                title: "second title"
+			              }
+			            ]
+			          }
+			        }
+			      }
+
+				    }
+				  }
+          break;
       }
 });
 
