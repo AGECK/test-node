@@ -71,7 +71,11 @@ restService.post("/V2test",function(req,res){
               fulfillmentText: "This is a text response",
               fulfillmentMessages:[
               {
-                 
+                    text :{
+                      text : [
+                          "Sorry, you can't use this function yet"
+                      ]
+                   }
                }
               ],
               source: "webhook-echo-sample",
