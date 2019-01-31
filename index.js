@@ -67,31 +67,31 @@ restService.post("/V2test",function(req,res){
            });
            break;
             case "Related products":
-              return res.json({
-	      fulfillmentText: "This is a text response",
-              fulfillmentMessages:[
-              {
+                        return res.json({
+           	  fulfillmentText: "This is a text response",
+           	  fulfillmentMessages:[
+           	  {
                    text :{
-                      text : [
-                          "This is Baidu"
-                      ]
+                   	  text : [
+                   	     "baidu"
+                   	  ]
                    }
-               }
-              ],
-              source: "webhook-echo-sample",
-                                payload: {
-				    google: {
-				      expectUserResponse: true,
-				      richResponse: {
-				        items: [
-				          {
-				            simpleResponse: {
-				              textToSpeech: "This is a Basic Card:"
-				            }
-				          }
-				        ]
-				      },
-				    systemIntent: {
+           	   }
+           	  ],
+           	  source: "webhook-echo-sample",
+			 payload: {
+			    google: {
+			      expectUserResponse: true,
+			      richResponse: {
+			        items: [
+			          {
+			            simpleResponse: {
+			              textToSpeech: "Choose a item"
+			            }
+			          }
+			        ]
+			      },
+			      systemIntent: {
 			        intent: "actions.intent.OPTION",
 			        data: {
 			          "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
@@ -124,10 +124,9 @@ restService.post("/V2test",function(req,res){
 			          }
 			        }
 			      }
-
-				    }
-				  }
-	      });
+			    }
+			  }
+           });
           break;
       }
 });
