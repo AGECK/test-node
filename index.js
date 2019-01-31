@@ -14,16 +14,17 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/V2test",function(req,res){
-          var speech = req.body.queryResult.parameters.echoText.toLowerCase();
+          var speech = "";
         
-       if (speech == "baidu"){
+       switch(req.body.queryResult.parameters.echoText.toLowerCase()){
+       	  case "baidu":
            return res.json({
               fulfillmentText: "This is a text response",
               fulfillmentMessages:[
               {
                    text :{
                       text : [
-                          speech
+                          "This is Baidu"
                       ]
                    }
                }
@@ -64,36 +65,7 @@ restService.post("/V2test",function(req,res){
 				    }
 				  }
            });
-      }
-      else
-      {
-         return res.json({
-              fulfillmentText: "This is a text response",
-              fulfillmentMessages:[
-              {
-                    text :{
-                      text : [
-                          "Sorry, you can't use this function yet"
-                      ]
-                   }
-               }
-              ],
-              source: "webhook-echo-sample",
-                  payload: {
-				    google: {
-				      expectUserResponse: true,
-				      richResponse: {
-				        items: [
-				          {
-				            simpleResponse: {
-				              textToSpeech: "目前暂时只能百度，请尝试输入 baidu "
-				            }
-				          }
-				        ]
-				      }
-				    }
-				  }
-           });
+           break;
       }
 });
 
