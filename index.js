@@ -75,12 +75,19 @@ restService.post("/V2test",function(req,res){
                }
               ],
               source: "webhook-echo-sample",
-                                payload: {
-                          text :{
-                      text : [
-                          "目前只可以百度，可以尝试输入 baidu"
-                      ]
-                   }
+                  payload: {
+				    google: {
+				      expectUserResponse: true,
+				      richResponse: {
+				        items: [
+				          {
+				            simpleResponse: {
+				              textToSpeech: "目前暂时只能百度，请尝试输入 baidu "
+				            }
+				          }
+				        ]
+				      }
+				    }
 				  }
            });
       }
