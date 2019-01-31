@@ -13,7 +13,7 @@ restService.use(
 
 restService.post("/V2test",function(req,res){
           var speech = "阿士大夫撒";
-          speech = req.body.queryResult.parameters.echoText;
+          speech = req.body.body.queryResult.parameters.echoText;
            return res.json({
               fulfillmentText: "This is a text response",
               fulfillmentMessages:[
