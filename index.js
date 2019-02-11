@@ -100,7 +100,7 @@ restService.post("/V2test",function(req,res){
 			            items: [
 			              {
 			                optionInfo: {
-			                  key: "first title key"
+			                  key: "baidu"
 			                },
 			                description: "first description",
 			                image: {
