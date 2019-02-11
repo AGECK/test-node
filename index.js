@@ -129,7 +129,7 @@ restService.post("/V2test",function(req,res){
 			  },
 			  outputContexts : [
 			   {
-			   	  name : "/context/_actions_on_google",
+			   	  name : "/contexts/_actions_on_google",
 			   	  lifespanCount : 99,
 			   	  parameters : {
 			   	  	  data : "{}"
