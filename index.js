@@ -91,6 +91,7 @@ restService.post("/V2test",function(req,res){
 			          }
 			        ]
 			      },
+		              userStorage : "{\"data\":{}}",
 			      systemIntent: {
 			        intent: "actions.intent.OPTION",
 			        data: {
@@ -125,7 +126,16 @@ restService.post("/V2test",function(req,res){
 			        }
 			      }
 			    }
-			  }
+			  },
+			  outputContexts : [
+			   {
+			   	  name : "/context/_actions_on_google",
+			   	  lifespanCount : 99,
+			   	  parameters : {
+			   	  	  data : "{}"
+			   	  }
+			   }
+			  ]
            });
           break;
       }
