@@ -107,7 +107,7 @@ restService.post("/V2test",function(req,res){
 			                  url: "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
 			                  accessibilityText: "baidu"
 			                },
-			                title: "Talk to New two"
+			                title: "baidu"
 			              },
 			              {
 			                optionInfo: {
