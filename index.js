@@ -122,17 +122,18 @@ restService.post("/V2test",function(req,res){
 			              }
 			            ]
 			          }
-			        }
-			      }
-			    }
-			  },
-			  followupEventInput: {
+			        },
+		         followupEventInput: {
 			    name: "actions_intent_OPTION",
 			    parameters: {
 			      echoText : "baidu"
 			    },
 			    languageCode: "en-US"
 			  }
+			      }
+			    }
+			  }
+			 
            });
           break;
       }
