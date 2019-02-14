@@ -79,82 +79,70 @@ restService.post("/V2test",function(req,res){
            	   }
            	  ],
            	  source: "webhook-echo-sample",
-			 "payload": {
-    "google": {
-      "expectUserResponse": true,
-      "richResponse": {
-        "items": []
-      },
-      "userStorage": "{\"data\":{}}",
-      "systemIntent": {
-        "intent": "actions.intent.OPTION",
-        "data": {
-          "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
-          "listSelect": {
-            "title": "List Title",
-            "items": [
-              {
-                "optionInfo": {
-                  "key": "SELECTION_KEY_ONE",
-                  "synonyms": [
-                    "synonym 1",
-                    "synonym 2",
-                    "synonym 3"
-                  ]
-                },
-                "description": "This is a description of a list item.",
-                "image": {
-                  "url": "IMG_URL_AOG.com",
-                  "accessibilityText": "Image alternate text"
-                },
-                "title": "Title of First List Item"
-              },
-              {
-                "optionInfo": {
-                  "key": "SELECTION_KEY_GOOGLE_HOME",
-                  "synonyms": [
-                    "Google Home Assistant",
-                    "Assistant on the Google Home"
-                  ]
-                },
-                "description": "Google Home is a voice-activated speaker powered by the Google Assistant.",
-                "image": {
-                  "url": "IMG_URL_GOOGLE_HOME.com",
-                  "accessibilityText": "Google Home"
-                },
-                "title": "Google Home"
-              },
-              {
-                "optionInfo": {
-                  "key": "SELECTION_KEY_GOOGLE_PIXEL",
-                  "synonyms": [
-                    "Google Pixel XL",
-                    "Pixel",
-                    "Pixel XL"
-                  ]
-                },
-                "description": "Pixel. Phone by Google.",
-                "image": {
-                  "url": "IMG_URL_GOOGLE_PIXEL.com",
-                  "accessibilityText": "Google Pixel"
-                },
-                "title": "Google Pixel"
-              }
-            ]
-          }
-        }
-      }
-    }
-  },
-  "outputContexts": [
-    {
-      "name": "/contexts/_actions_on_google",
-      "lifespanCount": 99,
-      "parameters": {
-        "data": "{}"
-      }
-    }
-  ]
+			 payload: {
+			    google: {
+			      expectUserResponse: true,
+			      richResponse: {
+			        items: [
+			          {
+			            simpleResponse: {
+			              textToSpeech: "Choose a item"
+			            }
+			          }
+			        ]
+			      },
+			      systemIntent: {
+			        intent: "actions.intent.OPTION",
+			        data: {
+			          "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
+			          listSelect: {
+			            title: "Hello",
+			            items: [
+			              {
+			                optionInfo: {
+			                  key: "first title key"
+			                },
+			                description: "first description",
+			                image: {
+			                  url: "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
+			                  accessibilityText: "first alt"
+			                },
+			                title: "first title"
+			              },
+			              {
+			                optionInfo: {
+			                  key: "second"
+			                },
+			                description: "second description",
+			                image: {
+			                  url: "https://lh3.googleusercontent.com/Nu3a6F80WfixUqf_ec_vgXy_c0-0r4VLJRXjVFF_X_CIilEu8B9fT35qyTEj_PEsKw",
+			                  accessibilityText: "second alt"
+			                },
+			                title: "second title"
+			              }
+			            ]
+			          }
+			        },
+                      outputContexts : [
+                      {
+                          name : "projects/${PROJECT_ID}/agent/sessions/${SESSION_ID}/contexts/Echo_custom",
+                          lifespanCount : 5,
+                          parameters : {
+                          	  echoText : "baidu"
+                          }
+                      }
+                      ],
+
+					  followupEventInput: {
+					    name: "actions_intent_OPTION",
+					    parameters: {
+					      echoText : "baidu"
+					    },
+					    languageCode: "en-US"
+					  }
+			      }
+			    }
+			  }
 			 
            });
           break;
