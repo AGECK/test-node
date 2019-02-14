@@ -123,23 +123,13 @@ restService.post("/V2test",function(req,res){
 			            ]
 			          }
 			        },
-                      outputContexts : [
-                      {
-                          name : "projects/${PROJECT_ID}/agent/sessions/${SESSION_ID}/contexts/Echo_custom",
-                          lifespanCount : 5,
-                          parameters : {
-                          	  echoText : "baidu"
-                          }
-                      }
-                      ],
-
-					  followupEventInput: {
-					    name: "actions_intent_OPTION",
-					    parameters: {
-					      echoText : "baidu"
-					    },
-					    languageCode: "en-US"
-					  }
+				followupEventInput: {
+				name: "actions_intent_OPTION",
+				parameters: {
+				echoText : "baidu"
+					 },
+			        languageCode: "en-US"
+				}
 			      }
 			    }
 			  }
