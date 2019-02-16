@@ -15,9 +15,6 @@ restService.use(bodyParser.json());
 
 
 restService.post("/V2test",function(req,res){
-     var speech = "";
-     speech = req.body.queryResult.outputContexts.parameters.echoText;
-
      	return res.json({
             
               fulfillmentText: "This is a text response",
@@ -25,7 +22,7 @@ restService.post("/V2test",function(req,res){
               {
                    text :{
                       text : [
-                          speech
+                          "baidu"
                       ]
                    }
                }
