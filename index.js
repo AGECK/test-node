@@ -15,11 +15,9 @@ restService.use(bodyParser.json());
 
 
 restService.post("/V2test",function(req,res){
- 
-     var speech = req.body.queryResult.outputContexts.parameters.OPTION;
+     var speech = "";
+     speech = req.body.queryResult.outputContexts.parameters.OPTION;
 
-     if(speech == 'baidu')
-     {
      	return res.json({
             
               fulfillmentText: "This is a text response",
@@ -27,7 +25,7 @@ restService.post("/V2test",function(req,res){
               {
                    text :{
                       text : [
-                          "This is Baidu"
+                          speech
                       ]
                    }
                }
@@ -35,8 +33,6 @@ restService.post("/V2test",function(req,res){
               source: "webhook-echo-sample"
 
      	});
-     }
-
 });
 
 
