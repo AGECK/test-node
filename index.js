@@ -60,7 +60,13 @@ restService.post("/V2test",function(req,res){
 				        ]
 				      }
 				    }
-				  }
+				  },
+		"followupEventInput": {
+		    "name": "actions_intent_OPTION",
+		    "parameters": {
+			"param1": "this is it"
+		    }
+		}
      	});
 });
 
