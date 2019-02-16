@@ -65,7 +65,8 @@ restService.post("/V2test",function(req,res){
 		    "name": "actions_intent_OPTION",
 		    "parameters": {
 			"param1": "this is it"
-		    }
+		    },
+		  "languageCode":"en-US"
 		}
      	});
 });
