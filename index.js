@@ -16,20 +16,26 @@ restService.use(bodyParser.json());
 
 restService.post("/V2test",function(req,res){
  
-      app.intent('action.intent.OPTIONS',(conv,params,option) => {
-      	  if(!option)
-      	  {
-                conv.ask('You did not select any item from the list or carousel');
-      	  }
-      	  else if(option === 'baidu')
-      	  {
-              conv.ask('You onClick the Baidu');
-      	  }
-      	  else
-      	  {
-      	  	conv.ask('You selected an unknown item from the list,or carousel');
-      	  }
-      });
+     var speech = req.body.queryResult.outputContexts.parameters.OPTION;
+
+     if(speech == 'baidu')
+     {
+     	return res.json({
+            
+              fulfillmentText: "This is a text response",
+              fulfillmentMessages:[
+              {
+                   text :{
+                      text : [
+                          "This is Baidu"
+                      ]
+                   }
+               }
+              ],
+              source: "webhook-echo-sample"
+
+     	});
+     }
 
 });
 
