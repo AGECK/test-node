@@ -16,7 +16,7 @@ restService.use(bodyParser.json());
 
 restService.post("/V2test",function(req,res){
 	    var Event = "";
-	    Event=req.body.inputs.arguments.textValue;
+	    Event=req.body.queryResult.outputContexts.parameters.Context;
      	return res.json({           
               fulfillmentText: "This is a text response",
               fulfillmentMessages:[
