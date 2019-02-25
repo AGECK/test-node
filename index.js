@@ -6,34 +6,46 @@ const bodyParser = require("body-parser");
 const restService = express();
 
 restService.use(
-  bodyParser.urlencoded({
-    extended: true
-  })
-);
+      bodyParser.urlencoded({
+      	extended: true
+      })
+	);
 
 restService.use(bodyParser.json());
 
-
-restService.post("/V2test",function(req,res){
-	    var Event = "";
-	    Event=req.body.queryResult.outputContexts.parameters.Context;
-     	return res.json({           
-              fulfillmentText: "This is a text response",
-              fulfillmentMessages:[
-              {
-                   text :{
-                      text : [
-                          Event
-                      ]
-                   }
-               }
-              ],
-              source: "webhook-echo-sample"
-
-     	});
+restService.post("/V2test",function(){
+	    return res.json({
+    fulfillmentText: "This is a text response",
+    fulfillmentMessages: [
+      {
+           text:{
+           	  text:[
+                 "This is a song called music"
+           	  ]
+           }
+      }
+    ],
+    source: "webhook-echo-sample",
+    payload: {
+    google: {
+      expectUserResponse: true,
+      richResponse: {
+        items: [
+          {
+            simpleResponse: {
+              textToSpeech: '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg">did not get your audio file</audio></speak>'
+            }
+          }
+        ]
+      }
+    }
+  }
+  });
 });
 
 
+
+
 restService.listen(process.env.PORT || 8000,function(){
-     console.log("Server up and listening");
+	console.log("Server up and listening");
 });
