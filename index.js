@@ -14,7 +14,7 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/V2test",function(){
-	    return res.json({
+     	    return res.json({
     fulfillmentText: "This is a text response",
     fulfillmentMessages: [
       {
@@ -29,15 +29,26 @@ restService.post("/V2test",function(){
     payload: {
     google: {
       expectUserResponse: true,
-      richResponse: {
-        items: [
-          {
-            simpleResponse: {
-              textToSpeech: '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg">did not get your audio file</audio></speak>'
+  expectedInputs: [
+    {
+      possibleIntents: [
+        {
+          intent: "actions.intent.TEXT"
+        }
+      ],
+      inputPrompt: {
+        richInitialPrompt: {
+          items: [
+            {
+              simpleResponse: {
+                textToSpeech: '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg">did not get your audio file</audio></speak>'
+              }
             }
-          }
-        ]
+          ]
+        }
       }
+    }
+  ]
     }
   }
   });
