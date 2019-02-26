@@ -25,32 +25,7 @@ restService.post("/V2test",function(){
            }
       }
     ],
-    source: "webhook-echo-sample",
-    payload: {
-    google: {
-      expectUserResponse: true,
-  expectedInputs: [
-    {
-      possibleIntents: [
-        {
-          intent: "actions.intent.TEXT"
-        }
-      ],
-      inputPrompt: {
-        richInitialPrompt: {
-          items: [
-            {
-              simpleResponse: {
-                textToSpeech: '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg">did not get your audio file</audio></speak>'
-              }
-            }
-          ]
-        }
-      }
-    }
-  ]
-    }
-  }
+    source: "webhook-echo-sample"
   });
 });
 
