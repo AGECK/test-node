@@ -25,7 +25,21 @@ restService.post("/V2test",function(){
            }
       }
     ],
-    source: "webhook-echo-sample"
+    source: "webhook-echo-sample",
+    payload: {
+    google: {
+    expectUserResponse: true,
+    richResponse: {
+      items: [
+        {
+          simpleResponse: {
+            textToSpeech: "<speak><audio src='https://raw.githubusercontent.com/AGECK/test-node/master/public/Cancan.mp3'>your wave file</audio></speak>"
+          }
+        }
+      ]
+    }
+  }
+  }
   });
 });
 
