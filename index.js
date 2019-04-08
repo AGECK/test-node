@@ -39,7 +39,13 @@ restService.post("/V2test",function(req, res){
       ]
     }
   }
-  }
+  },
+"outputContexts": [
+      {
+        "name": "projects/jituopi-5f232/agent/sessions/ad236f60-2b12-2a60-ccff-b35ca09609f4/contexts/repeatthevoice-followup",
+        "lifespanCount": 1
+      }
+    ]		
   });
 });
 
