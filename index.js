@@ -16,7 +16,7 @@ restService.use(bodyParser.json());
 restService.post("/V2test",function(req, res){
 
 var userspeech="";
-switch (req.body.result.parameters.AudioSample.toLowerCase()) {
+switch (req.body.queryResult.queryText.toLowerCase()) {
 
          case "stop":
          return res.json({
