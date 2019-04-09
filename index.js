@@ -20,12 +20,12 @@ switch (req.body.queryResult.queryText.toLowerCase()) {
 
          case "stop restudy":
          return res.json({
-                          fulfillmentText: "This is a text response",
+                          fulfillmentText: "Stop repeat the voice",
               fulfillmentMessages:[
               {
                    text :{
                       text : [
-                          "This is Baidu"
+                          "Stop repeat the voice"
                       ]
                    }
                }
