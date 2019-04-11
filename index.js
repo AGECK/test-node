@@ -18,7 +18,7 @@ restService.post("/V2test",function(req, res){
 var userspeech="";
 switch (req.body.queryResult.queryText.toLowerCase()) {
 
-	case "Stop to follow":
+	case "stop to follow":
          return res.json({
               fulfillmentText: "Stop repeat the voice",
               fulfillmentMessages:[
